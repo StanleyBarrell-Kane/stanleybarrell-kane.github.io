@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "CV",
+    "section": "",
+    "text": "Curriculum Vitae\nLink here"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Stanley Barrell-Kane\nPh.D. Candidate in Economics\nXYZ University\n\n\n\nJob Market Paper\nHere is a brief description of your job market paper. You can include the title, co-authors, and a short summary of the research question, methodology, and findings. - Title of Job Market Paper\nCo-authored with Co-author Name\nShort 1-2 sentence description of the paper. - Link to Paper - Link to Slides\n\n\nResearch Interests\n\nMacroeconomics\nPublic Economics\nSpatial Economics\n\n\n\nWorking Papers\n\nTitle of Working Paper 1\nShort description of the working paper.\n\nLink to Paper\n\nTitle of Working Paper 2 Short description of the working paper.\n\nLink to Paper\n\n\n\n\nWorks in Progress\n\nTitle of Work in Progress 1\nShort description of the work in progress.\nTitle of Work in Progress 2 Short description of the work in progress.\n\n\n\nTeaching\n\nCourse Title\nShort description of the course, including your role (e.g., teaching assistant, instructor).\nCourse Title Short description of the course, including your role (e.g., teaching assistant, instructor).\n\n\n\nContact\n\nEmail: your.email@example.com\nDownload my CV"
+  },
+  {
+    "objectID": "index.html#research-interests",
+    "href": "index.html#research-interests",
+    "title": "Home",
+    "section": "Research Interests",
+    "text": "Research Interests\n\nMacroeconomics\nPublic Economics\nSpatial Economics"
+  }
+]

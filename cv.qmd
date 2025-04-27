@@ -1,0 +1,7 @@
+---
+title: "CV"
+format: html
+---
+
+# Curriculum Vitae
+[Link here](cv/cv.pdf){target="_blank"}

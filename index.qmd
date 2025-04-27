@@ -1,0 +1,50 @@
+---
+title: "Home"
+format: html
+---
+
+# Stanley Barrell-Kane
+
+Ph.D. Candidate in Economics  
+XYZ University
+
+---
+
+# Job Market Paper
+Here is a brief description of your job market paper. You can include the title, co-authors, and a short summary of the research question, methodology, and findings.
+- **Title of Job Market Paper**  
+  Co-authored with [Co-author Name](https://example.com)  
+  Short 1-2 sentence description of the paper.
+  - [Link to Paper](https://example.com)
+  - [Link to Slides](https://example.com)
+
+
+# Research Interests
+- Macroeconomics
+- Public Economics
+- Spatial Economics
+
+# Working Papers
+- **Title of Working Paper 1**  
+  Short description of the working paper.
+  - [Link to Paper](https://example.com)
+- **Title of Working Paper 2**
+  Short description of the working paper.
+  - [Link to Paper](https://example.com)
+
+# Works in Progress
+- **Title of Work in Progress 1**  
+  Short description of the work in progress.
+- **Title of Work in Progress 2**
+  Short description of the work in progress.
+
+# Teaching
+- **Course Title**  
+  Short description of the course, including your role (e.g., teaching assistant, instructor).
+- **Course Title**
+  Short description of the course, including your role (e.g., teaching assistant, instructor).
+
+# Contact
+- Email: [your.email@example.com](mailto:your.email@example.com)
+- [Download my CV](cv.qmd)
+
