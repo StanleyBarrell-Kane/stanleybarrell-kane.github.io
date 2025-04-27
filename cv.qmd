@@ -3,5 +3,21 @@ title: "CV"
 format: html
 ---
 
-# Curriculum Vitae
-[Link here](cv/cv.pdf){target="_blank"}
+My full CV is [here](cv/cv.pdf){target="_blank"}
+
+# Education
+- **Ph.D. in Economics**  
+  XYZ University, Expected Graduation: May 2024
+- **M.A. in Economics**
+    XYZ University, May 2020
+- **B.A. in Economics**
+    XYZ University, May 2018
+
+# Teaching
+- **Course Title**  
+  Short description of the course, including your role (e.g., teaching assistant, instructor).
+- **Course Title**
+  Short description of the course, including your role (e.g., teaching assistant, instructor).
+
+# Conferences and Workshops
+- **Conference Name**
