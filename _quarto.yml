@@ -21,6 +21,7 @@ website:
   navbar:
     pinned: true
     collapse-below: lg
+    logo: assets/placeholder-portrait.svg
     left:
       - text: "Home"
         href: index.qmd
