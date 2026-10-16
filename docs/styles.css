@@ -14,6 +14,15 @@
 
 /* ---------- Base ---------- */
 
+html {
+  /* Reserve the vertical scrollbar's space at all times. Without this,
+     opening an abstract adds enough height to cross the scrolling
+     threshold, the scrollbar appears, and everything sized relative to
+     the viewport (e.g. the full-width navbar border) visibly shifts —
+     which reads as unrelated bars "stretching" the instant you open one. */
+  scrollbar-gutter: stable;
+}
+
 html, body {
   font-family: "Libertinus Serif", Georgia, "Times New Roman", serif;
   background: var(--paper);
@@ -204,11 +213,13 @@ main h2:first-of-type + p strong {
 
 .hero-portrait {
   /* Rectangular (4:5). A real photo has no built-in frame (unlike the
-     old SVG placeholder did), so the border lives here now. */
+     old SVG placeholder did), so the border lives here now. Subtle grey
+     frame (same --hairline used for dividers elsewhere), not a bold
+     ink line. */
   width: 200px;
   height: 250px;
   object-fit: cover;
-  border: 1.5px solid var(--ink);
+  border: 1px solid var(--hairline);
   flex-shrink: 0;
 }
 
@@ -412,6 +423,7 @@ details > *:not(summary) {
   line-height: 1.65;
   border-left: 2px solid var(--ink);
   padding: 0.25rem 0 0.25rem 1.1rem;
+  overflow-wrap: break-word;
 }
 
 /* ---------- HR ---------- */
