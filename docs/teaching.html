@@ -574,7 +574,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Last updated September 2026</p>
+<p>Last updated October 2026</p>
 </div>
   </div>
 </footer>
@@ -610,11 +610,13 @@ ul.task-list li input[type="checkbox"] {
     sum.appendChild(document.createTextNode(label));
     if (linksNode && linksNode.childNodes.length) {
       sum.appendChild(document.createTextNode(' · '));
-      while (linksNode.firstChild) sum.appendChild(linksNode.firstChild);
-      // Stop link clicks from toggling the details.
-      sum.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', e => e.stopPropagation());
-      });
+      // Wrap the links line in its own span so clicks anywhere in it
+      // (links, separators, plain text like "Submitted") never
+      // toggle the details — only clicking the "Abstract" label does.
+      const linksSpan = document.createElement('span');
+      while (linksNode.firstChild) linksSpan.appendChild(linksNode.firstChild);
+      linksSpan.addEventListener('click', e => e.stopPropagation());
+      sum.appendChild(linksSpan);
     }
     det.appendChild(sum);
     while (bq.firstChild) det.appendChild(bq.firstChild);
