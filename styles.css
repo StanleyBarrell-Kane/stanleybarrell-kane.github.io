@@ -66,7 +66,7 @@ body.nav-fixed {
 
 .navbar-brand {
   font-weight: 700 !important;
-  font-size: 1.4rem !important;
+  font-size: 2rem !important;
   letter-spacing: -0.01em;
   color: var(--ink) !important;
 }
@@ -181,11 +181,11 @@ main h2:first-of-type + p strong {
 }
 
 .hero-portrait {
-  width: 180px;
-  height: 180px;
+  /* Rectangular (4:5), matching the placeholder's own aspect ratio —
+     its double-hairline frame is baked into the SVG, so no CSS border here. */
+  width: 200px;
+  height: 250px;
   object-fit: cover;
-  border-radius: 50%;
-  border: 1.5px solid var(--ink);
   flex-shrink: 0;
 }
 
@@ -196,8 +196,8 @@ main h2:first-of-type + p strong {
   }
 
   .hero-portrait {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 200px;
   }
 }
 
