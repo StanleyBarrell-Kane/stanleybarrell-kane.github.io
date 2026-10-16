@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "cv/LICENSE.html",
-    "href": "cv/LICENSE.html",
-    "title": "Stanley Barrell-Kane",
+    "objectID": "public_goods.html",
+    "href": "public_goods.html",
+    "title": "Public goods",
     "section": "",
-    "text": "MIT License\nCopyright (c) 2025–present Pascal Michaillat\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+    "text": "A few bits of code I’ve written over the years for fairly standard tasks that were annoying and time-consuming. I am confident in the accuracy of the code for my specific purposes, but no warranty whatsoever is offered for use elsewhere.\n\nData cleaning\n\nCleaning the Consumer Expenditure Survey\n\nStata code that cleans the CEX following Aguiar and Bils (2015). Handles top-coding, multi-quarter aggregation across the interview and diary surveys, and the 2013 redesign. Outputs a household-quarter panel with consistent expenditure categories from 1996 onward.\n\n\nCleaning the PSID\n\nR code that cleans the PSID following Guvenen and Smith (2014). Constructs annual measures of earnings, wealth, and consumption with consistent definitions across the biennial waves post-1997.\n\n\n\nGeography\n\nLinking historical UK geographies\n\nA Bash + Python pipeline that uses the ONS Geography Portal to crosswalk administrative geographies across boundary changes — parishes, wards, and LSOAs — with population-weighted apportionment for variables that don’t aggregate cleanly."
   },
   {
     "objectID": "index.html",
@@ -19,26 +19,5 @@
     "title": "Working Papers",
     "section": "",
     "text": "Ph.D. Candidate in Economics, University of Bristol. I work on macroeconomics, environmental economics, and spatial economics."
-  },
-  {
-    "objectID": "teaching.html",
-    "href": "teaching.html",
-    "title": "Teaching",
-    "section": "",
-    "text": "2025–26\n\nMathematics for Economics (1st year B.Sc. Economics) — Teaching Assistant.  Linear algebra, multivariable calculus, and constrained optimization for economists.\n\n\n\n2024–25\n\nPublic Economics (3rd year B.Sc. Economics) — Teaching Assistant. Optimal taxation, public goods, and externalities.\nEconomics (1st year M.Sc. Economics, Finance and Management) — Teaching Assistant. Core micro and macro foundations for postgraduate students from non-economics backgrounds.\n\n\n\n2023–24\n\nPublic Economics (3rd year B.Sc. Economics) — Teaching Assistant."
-  },
-  {
-    "objectID": "public_goods.html",
-    "href": "public_goods.html",
-    "title": "Public goods",
-    "section": "",
-    "text": "A few bits of code I’ve written over the years for fairly standard tasks that were annoying and time-consuming. I am confident in the accuracy of the code for my specific purposes, but no warranty whatsoever is offered for use elsewhere.\n\nData cleaning\n\nCleaning the Consumer Expenditure Survey\n\nStata code that cleans the CEX following Aguiar and Bils (2015). Handles top-coding, multi-quarter aggregation across the interview and diary surveys, and the 2013 redesign. Outputs a household-quarter panel with consistent expenditure categories from 1996 onward.\n\n\nCleaning the PSID\n\nR code that cleans the PSID following Guvenen and Smith (2014). Constructs annual measures of earnings, wealth, and consumption with consistent definitions across the biennial waves post-1997.\n\n\n\nGeography\n\nLinking historical UK geographies\n\nA Bash + Python pipeline that uses the ONS Geography Portal to crosswalk administrative geographies across boundary changes — parishes, wards, and LSOAs — with population-weighted apportionment for variables that don’t aggregate cleanly."
-  },
-  {
-    "objectID": "cv.html",
-    "href": "cv.html",
-    "title": "CV",
-    "section": "",
-    "text": "Download PDF — last updated September 2026.\n\nEducation\n\nPh.D. in Economics, University of Bristol — expected 2027\nM.Res. in Economics, University of Bristol — 2023\nB.Sc. in Economics and Econometrics, University of Bristol — 2022\n\n\n\nExperience\n\nResearch Assistant to Dr. Hailey Yoon, Text Analysis of Trade Agreements — 2023\n\n\n\nAwards & Funding\n\nUniversity of Bristol Postgraduate Bursary — 2022–2027"
   }
 ]

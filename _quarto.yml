@@ -2,6 +2,10 @@ project:
   type: website
   output-dir: docs
   pre-render: ./scripts/dates.sh
+  render:
+    - "*.qmd"
+    - "!cv.qmd"
+    - "!teaching.qmd"
   resources:
     - assets/
 
@@ -21,9 +25,8 @@ website:
       - text: "Home"
         href: index.qmd
       - text: "CV"
-        href: cv.qmd
-      - text: "Teaching"
-        href: teaching.qmd
+        href: cv/cv.pdf
+        target: _blank
     right:
       - icon: envelope
         href: mailto:stanley.barrell-kane@bristol.ac.uk
