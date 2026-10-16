@@ -1,0 +1,355 @@
+/* ============================================================
+   Bold typographic, near-monochrome.
+   Source Serif Pro everywhere.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,600&display=swap');
+
+:root {
+  --ink: #0a0a0a;
+  --paper: #fafaf7;
+  --muted: #6a6a6a;
+  --hairline: #d8d6d0;
+}
+
+/* ---------- Base ---------- */
+
+html, body {
+  font-family: "Source Serif Pro", Georgia, "Times New Roman", serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Quarto wraps content in main.content; force narrow column. */
+main.content,
+main#quarto-document-content,
+.page-columns > main {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3.5rem 1.5rem 6rem;
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+  background: var(--paper) !important;
+  border-bottom: 1.5px solid var(--ink);
+  padding: 0.55rem 1.25rem !important;
+  font-family: "Source Serif Pro", serif;
+  box-shadow: none !important;
+}
+
+.navbar-brand {
+  font-family: "Source Serif Pro", serif !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.82rem !important;
+  color: var(--ink) !important;
+}
+
+.navbar-nav .nav-link,
+.navbar .nav-link {
+  color: var(--ink) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.74rem !important;
+  font-weight: 600;
+  padding: 0.25rem 0.85rem !important;
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar .nav-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1.5px;
+}
+
+.navbar .nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
+/* Right-side icons */
+.navbar .quarto-navbar-tools .nav-link i {
+  font-size: 1rem;
+}
+
+/* ---------- Hero (the page H1/H2 right at the top of index) ---------- */
+
+main h1.title,
+main h2:first-of-type {
+  font-family: "Source Serif Pro", serif;
+  font-size: clamp(2.4rem, 6.5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin: 1.5rem 0 1.25rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 4px double var(--ink);
+  text-wrap: pretty;
+  hyphens: none;
+}
+
+/* Tagline immediately under the hero */
+main h2:first-of-type + p,
+main h1.title + p {
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  margin-bottom: 2.5rem;
+}
+
+main h2:first-of-type + p strong,
+main h1.title + p strong {
+  font-weight: 700;
+  border-bottom: 2px solid var(--ink);
+}
+
+/* ---------- Section headings (H1s used as section markers) ---------- */
+
+main h1 {
+  font-family: "Source Serif Pro", serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1.5px solid var(--ink);
+}
+
+main h1::after {
+  content: "";
+  display: inline-block;
+  width: 1ch;
+}
+
+/* On non-index pages where H1 is the page title, treat the FIRST H1 as the hero. */
+main > h1:first-of-type {
+  font-size: clamp(2rem, 5.5vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  border-bottom: 4px double var(--ink);
+  padding-bottom: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- Body type ---------- */
+
+p {
+  font-size: 1.05rem;
+  margin-bottom: 1.1rem;
+}
+
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+/* ---------- Lists ---------- */
+
+main ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 2rem 0;
+}
+
+main ul > li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+main ul > li:last-child {
+  border-bottom: none;
+}
+
+/* ---------- News list (dense, dated) ---------- */
+
+#news ~ ul:first-of-type > li {
+  padding: 0.55rem 0;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  border-bottom: 1px dotted var(--hairline);
+}
+
+#news ~ ul:first-of-type > li > strong:first-child {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-right: 0.5rem;
+}
+
+/* ---------- Paper card (working papers, works in progress) ---------- */
+
+.paper {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.paper:last-child,
+section.level1 > .paper:last-of-type {
+  border-bottom: none;
+}
+
+.paper > p:first-child {
+  margin-bottom: 0.6rem;
+}
+
+/* Hide raw blockquotes inside .papers until the script wraps them in <details>. */
+.papers blockquote { display: none; }
+
+/* Hide the "links" paragraph (the <p> right before a blockquote) until the
+   script moves it into the abstract summary. */
+.papers > p:has(+ blockquote) { display: none; }
+
+/* ---------- Date labels in the left margin ---------- */
+
+main ul > li:has(.date) {
+  position: relative;
+  padding-left: 5.75rem;
+}
+
+.date {
+  position: absolute;
+  left: 0;
+  top: 1.05rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ---------- Links ---------- */
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: background-color 80ms ease, color 80ms ease;
+}
+
+a:hover {
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+}
+
+/* Don't invert nav links on hover */
+.navbar a:hover {
+  background: transparent;
+  color: var(--ink);
+}
+
+/* ---------- Details / abstracts ---------- */
+
+details {
+  margin: 0.6rem 0 0.2rem;
+}
+
+details > summary {
+  cursor: pointer;
+  font-size: 0.74rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  list-style: none;
+  display: inline-block;
+}
+
+details > summary::-webkit-details-marker { display: none; }
+
+details > summary::before {
+  content: "▸ ";
+  display: inline-block;
+  font-size: 0.7rem;
+  margin-right: 0.25rem;
+}
+
+details[open] > summary::before {
+  content: "▾ ";
+}
+
+details > *:not(summary) {
+  margin-left: 0;
+  margin-top: 1rem;
+  font-size: 0.98rem;
+  color: #1a1a1a;
+  line-height: 1.65;
+  border-left: 2px solid var(--ink);
+  padding: 0.25rem 0 0.25rem 1.1rem;
+}
+
+/* ---------- HR ---------- */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--ink);
+  margin: 2.5rem 0;
+}
+
+/* ---------- Misc ---------- */
+
+.anchorjs-link { display: none; }
+
+/* Page footer */
+.nav-footer,
+footer.footer {
+  border-top: 1px solid var(--hairline);
+  padding: 1rem 1.5rem !important;
+  margin-top: 5rem;
+  font-size: 0.62rem;
+  color: var(--muted);
+  background: var(--paper) !important;
+  font-family: "Source Serif Pro", serif !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.nav-footer a,
+footer.footer a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-footer a:hover,
+footer.footer a:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* Code styling for occasional inline code */
+code {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.92em;
+  background: #ececea;
+  padding: 0.05em 0.35em;
+  border-radius: 2px;
+}
+
+/* Selection */
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}

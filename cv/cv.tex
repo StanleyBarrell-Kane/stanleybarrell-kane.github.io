@@ -1,76 +1,58 @@
-\documentclass[letter,10pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{CJKutf8}
-\usepackage{tabularx}
-\usepackage{array}
-\usepackage{mcode}
-%====================
-% File:         resume.tex
-% Modifying author2:       https://github.com/mengisok 
-% Last Updated: Oct 29, 2022
-% Notes:        I edited again on the version of @gobborg      
-%====================
+\documentclass[letterpaper,10pt]{article}
+\usepackage{cv}
 
-%====================
-% File:         resume.tex
-% Modifying author1:       https://github.com/gobborg 
-% Last Updated: Dec 26, 2021
-% Notes:        I just made it prettier and better suited to
-%               my needs.
-%====================
+% Enter your name to populate PDF metadata:
+\hypersetup{pdftitle={Stanley Barrell-Kane's CV}}
 
-%====================
-% File:         resume.tex
-% Original author:       https://github.com/TimmyChan 
-%               https://www.linkedin.com/in/timmy-l-chan/
-% Last Updated: Nov 19, 2021
-% Notes:        All formatting is done in TLCresume.sty
-%               No need to touch that file. 
-%               All actual content is in the sections/ folder.
-%====================
+% Enter your email address:
+\grayfoot{C}{\url{stanley.barrell-kane@bristol.ac.uk}}
 
-\usepackage{TLCresume}
+% Enter your website's URL:
+\grayfoot{L}{\url{stanleybarrell-kane.com}}
 
-%====================
-% CONTACT INFORMATION
-%====================
-\author{Stanley Barrell-Kane} 
-\def\phone{}
-\def\city{London/Bristol}
-\def\email{stanley.barrell-kane@bristol.ac.uk}
-% blog edited in _header.tex
-\def\github{} % github username
-\def\LinkedIn{} % linkedin.com/in/______
+% Enter date:
+\grayfoot{R}{\today}
 
 \begin{document}
-\import{sections/}{_header}
-\vspace*{10pt}
 
-\section{Education}
-\import{sections/}{education}
-\vspace*{10pt}
+% Enter your name:
+\name{Stanley Barrell-Kane}
 
-\section{Experience}
-\vspace*{3pt}
-\import{sections/}{experience}
-\vspace*{10pt}
+% Fill out the different blocks of the CV:
+\block{Working papers}
 
-\section{Teaching}
-\import{sections/}{teaching}
-\vspace*{10pt}
+\begin{itemize}
+    \item The Distributional Consequences of Net-Zero Transitions \with{Hakki Yazici}
+\end{itemize}
 
-\section{Skills}
-\vspace*{3pt}
-\import{sections/}{skills}
-\vspace*{10pt}
+\block{Works in progress}
+\begin{itemize}
+    \item Practical Place-Based Policy
+    \item The Income Incidence of Net-Zero Transitions \with{Ctirad Slavik \& Hakki Yazici}
+    \item Ideological Gatekeepers And Consumer Choice: Evidence From US Car Dealers \with{Oska Fentem}
+\end{itemize}
 
-\section{Awards and Fellowships}
-\vspace*{3pt}
-\import{sections/}{awards}
-\vspace*{10pt}
+\block{Education}
 
-\section{References}
-\vspace*{3pt}
-{Available on request}
+\begin{itemize}
+\item University of Bristol \sep PhD in Economics \sep 2027 (expected)
+\item University of Minnesota \sep Visiting PhD student \sep Spring 2026
+\item University of Bristol \sep MRes in Economics \sep 2023
+\item University of Bristol \sep BSc in Economics \& Econometrics \sep 2022
+\end{itemize}
+
+\block{Teaching}
+
+\begin{itemize}
+\item Public Economics (ECON30034) \sep University of Bristol \sep 2024, 2025
+\item Mathematics for Economics (EFIM10023) \sep University of Bristol \sep 2025
+\item Economics (ECONM0029) \sep University of Bristol \sep 2024
+\end{itemize}
+
+\block{Software}
+
+\begin{itemize}
+\item R, STATA, Julia, MATLAB, Python
+\end{itemize}
 
 \end{document}

@@ -1,0 +1,25 @@
+---
+title: "Public goods"
+format: html
+---
+
+A few bits of code I've written over the years for fairly standard tasks that were annoying and time-consuming. I am confident in the accuracy of the code for my specific purposes, but **no warranty whatsoever** is offered for use elsewhere.
+
+# Data cleaning
+
+#### [Cleaning the Consumer Expenditure Survey](https://example.com)
+
+<!-- placeholder description -->
+Stata code that cleans the CEX following Aguiar and Bils (2015). Handles top-coding, multi-quarter aggregation across the interview and diary surveys, and the 2013 redesign. Outputs a household-quarter panel with consistent expenditure categories from 1996 onward.
+
+#### [Cleaning the PSID](https://example.com)
+
+<!-- placeholder description -->
+R code that cleans the PSID following Guvenen and Smith (2014). Constructs annual measures of earnings, wealth, and consumption with consistent definitions across the biennial waves post-1997.
+
+# Geography
+
+#### [Linking historical UK geographies](https://example.com)
+
+<!-- placeholder description -->
+A Bash + Python pipeline that uses the ONS Geography Portal to crosswalk administrative geographies across boundary changes — parishes, wards, and LSOAs — with population-weighted apportionment for variables that don't aggregate cleanly.

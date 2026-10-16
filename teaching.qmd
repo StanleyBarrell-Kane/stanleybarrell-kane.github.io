@@ -1,0 +1,17 @@
+---
+title: "Teaching"
+format: html
+---
+
+# 2025–26
+
+- **Mathematics for Economics** (1st year B.Sc. Economics) — Teaching Assistant. <!-- placeholder topic line --> Linear algebra, multivariable calculus, and constrained optimization for economists.
+
+# 2024–25
+
+- **Public Economics** (3rd year B.Sc. Economics) — Teaching Assistant. Optimal taxation, public goods, and externalities.
+- **Economics** (1st year M.Sc. Economics, Finance and Management) — Teaching Assistant. Core micro and macro foundations for postgraduate students from non-economics backgrounds.
+
+# 2023–24
+
+- **Public Economics** (3rd year B.Sc. Economics) — Teaching Assistant.

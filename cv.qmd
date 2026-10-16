@@ -3,21 +3,18 @@ title: "CV"
 format: html
 ---
 
-My full CV is [here](cv/cv.pdf){target="_blank"}
+[Download PDF](cv/cv.pdf) — last updated **{{< var cv_updated >}}**.
 
 # Education
-- **Ph.D. in Economics**  
-  XYZ University, Expected Graduation: May 2024
-- **M.A. in Economics**
-    XYZ University, May 2020
-- **B.A. in Economics**
-    XYZ University, May 2018
 
-# Teaching
-- **Course Title**  
-  Short description of the course, including your role (e.g., teaching assistant, instructor).
-- **Course Title**
-  Short description of the course, including your role (e.g., teaching assistant, instructor).
+- **Ph.D. in Economics**, University of Bristol — expected 2027
+- **M.Res. in Economics**, University of Bristol — 2023
+- **B.Sc. in Economics and Econometrics**, University of Bristol — 2022
 
-# Conferences and Workshops
-- **Conference Name**
+# Experience
+
+- **Research Assistant** to Dr. Hailey Yoon, *Text Analysis of Trade Agreements* — 2023
+
+# Awards & Funding
+
+- University of Bristol Postgraduate Bursary — 2022–2027
