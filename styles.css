@@ -48,7 +48,10 @@ main#quarto-document-content,
      above. min-width:0 lets it respect max-width/the track instead and
      rely on normal text wrapping. */
   min-width: 0;
-  padding: 3.5rem 1.5rem 6rem;
+  /* Top padding was tuned for the old giant display-name hero; now that
+     the name lives in the navbar and this is just a modest "Welcome"
+     line, that much air read as sitting too far below the nav bar. */
+  padding: 2rem 1.5rem 6rem;
 }
 
 /* ---------- Navbar: name above a plain link row ---------- */
@@ -225,7 +228,7 @@ main h2:first-of-type + p strong {
 .hero-portrait-frame {
   background: var(--paper);
   border: 1px solid var(--hairline);
-  padding: 10px;
+  padding: 18px;
   flex-shrink: 0;
 }
 
