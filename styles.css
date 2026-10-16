@@ -40,6 +40,14 @@ main#quarto-document-content,
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
+  /* main is a CSS Grid item here (Quarto's .page-columns layout). Grid
+     items default to min-width:auto, meaning they refuse to shrink
+     below their content's own natural minimum size — so revealing an
+     abstract can force this item (and the grid track with it) wider
+     than its column, visibly shifting the full-width navbar border
+     above. min-width:0 lets it respect max-width/the track instead and
+     rely on normal text wrapping. */
+  min-width: 0;
   padding: 3.5rem 1.5rem 6rem;
 }
 
@@ -211,16 +219,27 @@ main h2:first-of-type + p strong {
   margin-bottom: 0;
 }
 
+/* Mat/frame effect: a grey line with clearance around it, like a
+   photo print's white border, rather than a border sitting flush
+   against the image edge. */
+.hero-portrait-frame {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+.hero-portrait-frame > p {
+  margin: 0;
+  line-height: 0;
+}
+
 .hero-portrait {
-  /* Rectangular (4:5). A real photo has no built-in frame (unlike the
-     old SVG placeholder did), so the border lives here now. Subtle grey
-     frame (same --hairline used for dividers elsewhere), not a bold
-     ink line. */
+  /* Rectangular (4:5). */
   width: 200px;
   height: 250px;
   object-fit: cover;
-  border: 1px solid var(--hairline);
-  flex-shrink: 0;
+  display: block;
 }
 
 @media (max-width: 640px) {
