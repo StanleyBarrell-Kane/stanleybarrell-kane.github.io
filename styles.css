@@ -181,11 +181,12 @@ main h2:first-of-type + p strong {
 }
 
 .hero-portrait {
-  /* Rectangular (4:5), matching the placeholder's own aspect ratio —
-     its double-hairline frame is baked into the SVG, so no CSS border here. */
+  /* Rectangular (4:5). A real photo has no built-in frame (unlike the
+     old SVG placeholder did), so the border lives here now. */
   width: 200px;
   height: 250px;
   object-fit: cover;
+  border: 1.5px solid var(--ink);
   flex-shrink: 0;
 }
 

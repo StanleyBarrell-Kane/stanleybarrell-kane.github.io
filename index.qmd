@@ -6,9 +6,7 @@ format: html
 ::: {.hero-text}
 ## Welcome
 
-Ph.D. Candidate in Economics, University of Bristol. I work on **macroeconomics**, **environmental economics**, and **spatial economics**.
-
-You can find my [research](research.qmd), my [CV](cv/cv.pdf), or reach me at [stanley.barrell-kane@bristol.ac.uk](mailto:stanley.barrell-kane@bristol.ac.uk).
+I am a Ph.D. Candidate in Economics at the University of Bristol. I work on **macroeconomics**, **environmental economics**, and **spatial economics**.
 :::
-![](assets/placeholder-portrait.svg){.hero-portrait}
+![](assets/placeholder-portrait.jpg){.hero-portrait}
 :::
