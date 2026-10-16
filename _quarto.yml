@@ -21,10 +21,11 @@ website:
   navbar:
     pinned: true
     collapse-below: lg
-    logo: assets/placeholder-portrait.svg
     left:
       - text: "Home"
         href: index.qmd
+      - text: "Research"
+        href: research.qmd
       - text: "CV"
         href: cv/cv.pdf
         target: _blank

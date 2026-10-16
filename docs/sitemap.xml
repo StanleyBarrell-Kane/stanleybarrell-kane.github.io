@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://stanleybarrell-kane.github.io/public_goods.html</loc>
-    <lastmod>2026-05-09T21:55:24.889Z</lastmod>
+    <loc>https://stanleybarrell-kane.github.io/research.html</loc>
+    <lastmod>2026-10-16T18:21:23.162Z</lastmod>
   </url>
   <url>
     <loc>https://stanleybarrell-kane.github.io/index.html</loc>
-    <lastmod>2026-10-16T18:05:34.835Z</lastmod>
+    <lastmod>2026-10-16T18:21:28.676Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stanleybarrell-kane.github.io/public_goods.html</loc>
+    <lastmod>2026-05-09T21:55:24.889Z</lastmod>
   </url>
 </urlset>

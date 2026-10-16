@@ -1,9 +1,9 @@
 /* ============================================================
    Bold typographic, near-monochrome.
-   Source Sans 3 everywhere (sans-serif variant).
+   Libertinus Serif everywhere -- same family as paper.sty (via sbkfonts.sty).
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
   --ink: #0a0a0a;
@@ -15,7 +15,7 @@
 /* ---------- Base ---------- */
 
 html, body {
-  font-family: "Source Sans 3", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Libertinus Serif", Georgia, "Times New Roman", serif;
   background: var(--paper);
   color: var(--ink);
   font-size: 17px;
@@ -51,7 +51,7 @@ body.nav-fixed {
   background: var(--paper) !important;
   border-bottom: 1px solid var(--ink);
   padding: 1.75rem 1.25rem 0 !important;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: "Libertinus Serif", serif;
   box-shadow: none !important;
 }
 
@@ -69,25 +69,6 @@ body.nav-fixed {
   font-size: 1.4rem !important;
   letter-spacing: -0.01em;
   color: var(--ink) !important;
-}
-
-/* The logo and the name render as two separate .navbar-brand anchors
-   inside .navbar-brand-container (itself already a flex row) — the gap
-   between them is this anchor's margin, not a gap on a shared parent. */
-.navbar-brand.navbar-brand-logo {
-  margin-right: 0.85rem !important;
-}
-
-.navbar-logo {
-  width: 52px;
-  height: 52px;
-  max-height: none !important;
-  min-height: 0 !important;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 1.5px solid var(--ink);
-  margin: 0 !important;
-  padding: 0 !important;
 }
 
 .navbar-collapse {
@@ -136,9 +117,9 @@ body.nav-fixed {
 /* ---------- Page-title hero (CV, Teaching — the name now lives in the navbar) ---------- */
 
 main h1.title {
-  font-family: "Source Sans 3", sans-serif;
+  font-family: "Libertinus Serif", serif;
   font-size: clamp(2.4rem, 6.5vw, 4.5rem);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.95;
   letter-spacing: -0.03em;
   text-transform: uppercase;
@@ -164,17 +145,16 @@ main h1.title + p strong {
 /* ---------- Index lead-in (plain now that the name is in the navbar) ---------- */
 
 main h2:first-of-type {
-  font-family: "Source Sans 3", sans-serif;
-  font-size: 1.3rem;
+  font-family: "Libertinus Serif", serif;
+  font-size: 1.9rem;
   font-weight: 700;
   letter-spacing: -0.01em;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.9rem;
 }
 
 main h2:first-of-type + p {
   font-size: 1.05rem;
   color: var(--ink);
-  margin-bottom: 2.5rem;
 }
 
 main h2:first-of-type + p strong {
@@ -182,10 +162,49 @@ main h2:first-of-type + p strong {
   border-bottom: 2px solid var(--ink);
 }
 
+/* ---------- Hero portrait (placeholder for now) ---------- */
+
+.hero-row {
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-text > *:last-child {
+  margin-bottom: 0;
+}
+
+.hero-portrait {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .hero-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-portrait {
+    width: 140px;
+    height: 140px;
+  }
+}
+
 /* ---------- Section headings (H1s used as section markers) ---------- */
 
 main h1 {
-  font-family: "Source Sans 3", sans-serif;
+  font-family: "Libertinus Serif", serif;
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -205,7 +224,7 @@ main h1::after {
 /* On non-index pages where H1 is the page title, treat the FIRST H1 as the hero. */
 main > h1:first-of-type {
   font-size: clamp(2rem, 5.5vw, 3.5rem);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: -0.025em;
   text-transform: uppercase;
   border-bottom: 4px double var(--ink);
@@ -393,7 +412,7 @@ footer.footer {
   font-size: 0.62rem;
   color: var(--muted);
   background: var(--paper) !important;
-  font-family: "Source Sans 3", sans-serif !important;
+  font-family: "Libertinus Serif", serif !important;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.16em;
