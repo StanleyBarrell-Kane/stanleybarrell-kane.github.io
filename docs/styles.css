@@ -50,14 +50,31 @@ body.nav-fixed {
 .navbar {
   background: var(--paper) !important;
   border-bottom: 1px solid var(--ink);
-  padding: 1.75rem 1.25rem 0 !important;
+  /* No horizontal padding here — .navbar-container below is built exactly
+     like main.content (centered box + its own 1.5rem padding), so there's
+     only one source of left/right inset, matching the body column exactly. */
+  padding: 1.75rem 0 0 !important;
   font-family: "Libertinus Serif", serif;
   box-shadow: none !important;
 }
 
+/* Match main.content's column exactly, so the name and links start at
+   the same left edge as the body text below, instead of centering
+   across the full browser width with no shared alignment. */
 .navbar-container {
-  flex-direction: column;
-  align-items: center;
+  max-width: 760px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  /* Same construction as main.content: centered box, then its own
+     1.5rem padding — so the two columns line up exactly. */
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  /* Bootstrap's `.navbar > .container-fluid` rule (two classes) outranks
+     a plain `.navbar-container` (one class) on specificity, so
+     align-items here needs !important or it silently loses and stays
+     centered regardless of what's written below. */
+  flex-direction: column !important;
+  align-items: flex-start !important;
 }
 
 .navbar-brand-container {
@@ -76,13 +93,18 @@ body.nav-fixed {
   border-top: 1px solid var(--hairline);
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
-  justify-content: center !important;
+  justify-content: flex-start !important;
   gap: 2rem;
 }
 
-.navbar-collapse .me-auto,
+/* Left nav links start flush with the name above; the icon list keeps
+   its auto margin so it still sits flush with the column's right edge. */
+.navbar-collapse .me-auto {
+  margin-right: auto !important;
+}
+
 .navbar-collapse .ms-auto {
-  margin: 0 !important;
+  margin-left: auto !important;
 }
 
 .navbar-nav .nav-link,
