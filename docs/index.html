@@ -589,9 +589,17 @@ ul.task-list li input[type="checkbox"] {
       // Wrap the links line in its own span so clicks anywhere in it
       // (links, separators, plain text like "Submitted") never
       // toggle the details — only clicking the "Abstract" label does.
+      // Note: the native <details> toggle is the browser's default
+      // action for the click, not a normal bubbling listener —
+      // stopPropagation() alone does NOT cancel it, only
+      // preventDefault() does. Skip that for actual links so they
+      // still navigate normally.
       const linksSpan = document.createElement('span');
       while (linksNode.firstChild) linksSpan.appendChild(linksNode.firstChild);
-      linksSpan.addEventListener('click', e => e.stopPropagation());
+      linksSpan.addEventListener('click', e => {
+        e.stopPropagation();
+        if (!e.target.closest('a')) e.preventDefault();
+      });
       sum.appendChild(linksSpan);
     }
     det.appendChild(sum);
