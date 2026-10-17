@@ -278,8 +278,13 @@ main h1 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.22em;
+  /* margin-bottom intentionally smaller than margin-top: a heading
+     should sit closer to the content it introduces than to whatever
+     came before it. Measured the old 1.75rem/1.75rem split as actually
+     backwards — the gap into the heading's own first paper (46.75px)
+     was larger than the gap leading into the NEXT heading (29.75px). */
   margin-top: 1.75rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 1.5px solid var(--ink);
 }
