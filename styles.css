@@ -37,16 +37,18 @@ html, body {
 main.content,
 main#quarto-document-content,
 .page-columns > main {
+  /* The actual, confirmed cause of the abstract-open shift: without an
+     explicit width, a grid item centered via margin:auto can settle at
+     a slightly-too-narrow-but-stable width under some conditions and
+     only snap to its true max-width on the next reflow (e.g. a
+     <details> toggle) — verified directly: main.content measured
+     750.3px, then exactly 760px (its own max-width) after one click,
+     with nothing else involved. width:100% removes the ambiguity, so
+     it resolves to the right value immediately and stays there. */
+  width: 100%;
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
-  /* main is a CSS Grid item here (Quarto's .page-columns layout). Grid
-     items default to min-width:auto, meaning they refuse to shrink
-     below their content's own natural minimum size — so revealing an
-     abstract can force this item (and the grid track with it) wider
-     than its column, visibly shifting the full-width navbar border
-     above. min-width:0 lets it respect max-width/the track instead and
-     rely on normal text wrapping. */
   min-width: 0;
   /* Top padding was tuned for the old giant display-name hero; now that
      the name lives in the navbar and this is just a modest "Welcome"
