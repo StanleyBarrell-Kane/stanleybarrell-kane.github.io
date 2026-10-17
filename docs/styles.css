@@ -53,7 +53,7 @@ main#quarto-document-content,
   /* Top padding was tuned for the old giant display-name hero; now that
      the name lives in the navbar and this is just a modest "Welcome"
      line, that much air read as sitting too far below the nav bar. */
-  padding: 2rem 1.5rem 6rem;
+  padding: 1.25rem 1.5rem 6rem;
 }
 
 /* ---------- Navbar: name above a plain link row ---------- */
@@ -158,6 +158,13 @@ body.nav-fixed {
   font-size: 1rem;
 }
 
+/* Quarto's #title-block-header carries margin-block-end:1rem even when
+   empty (pages like index.qmd/research.qmd that use pagetitle/no title
+   instead of title:). Drop that stray space entirely. */
+#title-block-header:empty {
+  display: none;
+}
+
 /* ---------- Page-title hero (CV, Teaching — the name now lives in the navbar) ---------- */
 
 main h1.title {
@@ -210,7 +217,11 @@ main h2:first-of-type + p strong {
 
 .hero-row {
   display: flex;
-  align-items: center;
+  /* flex-start, not center: the photo is taller than the two-line bio,
+     so centering pushed "Welcome" ~70px down from the row's actual top
+     to sit level with the photo's middle — most of the "gap below the
+     nav bar" was this, not real padding. */
+  align-items: flex-start;
   gap: 2.75rem;
   margin-bottom: 2.5rem;
 }
