@@ -429,14 +429,22 @@ details > summary {
 details > summary::-webkit-details-marker { display: none; }
 
 details > summary::before {
-  content: "▸ ";
+  /* ▸ and ▾ render at slightly different widths in the fallback font
+     covering these glyphs — confirmed directly: 8.58px vs 9.88px.
+     Without a fixed width, everything after the marker shifts right by
+     that exact difference when it toggles open. A fixed width makes
+     both states occupy identical space regardless of actual glyph
+     metrics. */
+  content: "▸";
   display: inline-block;
+  width: 0.7rem;
+  text-align: center;
   font-size: 0.7rem;
   margin-right: 0.25rem;
 }
 
 details[open] > summary::before {
-  content: "▾ ";
+  content: "▾";
 }
 
 details > *:not(summary) {
