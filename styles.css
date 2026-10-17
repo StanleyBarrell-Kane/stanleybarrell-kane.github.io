@@ -437,6 +437,15 @@ details > summary {
   display: inline-block;
 }
 
+/* The links line (links + plain text like "Submitted") isn't the
+   toggle, so it shouldn't look clickable. cursor:auto here still shows
+   pointer over the actual <a> links (browsers resolve 'auto' to
+   pointer for an anchor regardless of an ancestor's cursor), just not
+   over the plain text around them. */
+details > summary > span {
+  cursor: auto;
+}
+
 details > summary::-webkit-details-marker { display: none; }
 
 details > summary::before {
