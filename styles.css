@@ -1,1 +1,559 @@
-/* css styles */
+/* ============================================================
+   Bold typographic, near-monochrome.
+   Libertinus Serif everywhere -- same family as paper.sty (via sbkfonts.sty).
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --ink: #0a0a0a;
+  --paper: #fafaf7;
+  --muted: #6a6a6a;
+  --hairline: #d8d6d0;
+}
+
+/* ---------- Base ---------- */
+
+html {
+  /* Reserve the vertical scrollbar's space at all times. Without this,
+     opening an abstract adds enough height to cross the scrolling
+     threshold, the scrollbar appears, and everything sized relative to
+     the viewport (e.g. the full-width navbar border) visibly shifts —
+     which reads as unrelated bars "stretching" the instant you open one. */
+  scrollbar-gutter: stable;
+}
+
+html, body {
+  font-family: "Libertinus Serif", Georgia, "Times New Roman", serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Quarto wraps content in main.content; force narrow column. */
+main.content,
+main#quarto-document-content,
+.page-columns > main {
+  /* The actual, confirmed cause of the abstract-open shift: without an
+     explicit width, a grid item centered via margin:auto can settle at
+     a slightly-too-narrow-but-stable width under some conditions and
+     only snap to its true max-width on the next reflow (e.g. a
+     <details> toggle) — verified directly: main.content measured
+     750.3px, then exactly 760px (its own max-width) after one click,
+     with nothing else involved. width:100% removes the ambiguity, so
+     it resolves to the right value immediately and stays there. */
+  width: 100%;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 0;
+  /* Top padding was tuned for the old giant display-name hero; now that
+     the name lives in the navbar and this is just a modest "Welcome"
+     line, that much air read as sitting too far below the nav bar. */
+  padding: 1.25rem 1.5rem 6rem;
+}
+
+/* ---------- Navbar: name above a plain link row ---------- */
+
+/* Quarto's navbar floats fixed over the page by default; take it out of
+   that mode so the name can sit above the link row as a normal part of
+   the page flow, not an overlay. */
+header#quarto-header.fixed-top {
+  position: static;
+}
+
+body.nav-fixed {
+  padding-top: 0 !important;
+}
+
+.navbar {
+  background: var(--paper) !important;
+  border-bottom: 1px solid var(--ink);
+  /* No horizontal padding here — .navbar-container below is built exactly
+     like main.content (centered box + its own 1.5rem padding), so there's
+     only one source of left/right inset, matching the body column exactly. */
+  padding: 1.75rem 0 0 !important;
+  font-family: "Libertinus Serif", serif;
+  box-shadow: none !important;
+}
+
+/* Match main.content's column exactly, so the name and links start at
+   the same left edge as the body text below, instead of centering
+   across the full browser width with no shared alignment. */
+.navbar-container {
+  max-width: 760px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  /* Same construction as main.content: centered box, then its own
+     1.5rem padding — so the two columns line up exactly. */
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  /* Bootstrap's `.navbar > .container-fluid` rule (two classes) outranks
+     a plain `.navbar-container` (one class) on specificity, so
+     align-items here needs !important or it silently loses and stays
+     centered regardless of what's written below. */
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.navbar-brand-container {
+  margin: 0 0 1.1rem !important;
+  /* Bootstrap reserves 115px here for a toggler button that, in this
+     stacked layout, no longer shares the row — found truncating the
+     name on mobile (it was eating into real text width for nothing). */
+  max-width: none !important;
+}
+
+.navbar-brand {
+  font-weight: 700 !important;
+  font-size: 2rem !important;
+  letter-spacing: -0.01em;
+  color: var(--ink) !important;
+  /* Bootstrap's default truncates long brand text with an ellipsis —
+     confirmed this was cutting "Stanley Barrell-Kane" down to "Stanley
+     Bar…" on a 390px-wide screen. Let it wrap instead. */
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+@media (max-width: 480px) {
+  .navbar-brand {
+    font-size: 1.6rem !important;
+  }
+}
+
+.navbar-collapse {
+  width: 100%;
+  border-top: 1px solid var(--hairline);
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  justify-content: flex-start !important;
+  gap: 2rem;
+}
+
+/* Left nav links start flush with the name above; the icon list keeps
+   its auto margin so it still sits flush with the column's right edge. */
+.navbar-collapse .me-auto {
+  margin-right: auto !important;
+}
+
+.navbar-collapse .ms-auto {
+  margin-left: auto !important;
+}
+
+.navbar-nav .nav-link,
+.navbar .nav-link {
+  color: var(--ink) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.74rem !important;
+  font-weight: 600;
+  padding: 0.25rem 0.85rem !important;
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar .nav-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1.5px;
+}
+
+.navbar .nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
+/* Right-side icons */
+.navbar .quarto-navbar-tools .nav-link i {
+  font-size: 1rem;
+}
+
+/* Quarto's #title-block-header carries margin-block-end:1rem even when
+   empty (pages like index.qmd/research.qmd that use pagetitle/no title
+   instead of title:). Drop that stray space entirely. */
+#title-block-header:empty {
+  display: none;
+}
+
+/* ---------- Page-title hero (CV, Teaching — the name now lives in the navbar) ---------- */
+
+main h1.title {
+  font-family: "Libertinus Serif", serif;
+  font-size: clamp(2.4rem, 6.5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin: 1.5rem 0 1.25rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 4px double var(--ink);
+  text-wrap: pretty;
+  hyphens: none;
+}
+
+main h1.title + p {
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  margin-bottom: 2.5rem;
+}
+
+main h1.title + p strong {
+  font-weight: 700;
+  border-bottom: 2px solid var(--ink);
+}
+
+/* ---------- Index lead-in (plain now that the name is in the navbar) ---------- */
+
+main h2:first-of-type {
+  font-family: "Libertinus Serif", serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.9rem;
+}
+
+main h2:first-of-type + p {
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+main h2:first-of-type + p strong {
+  font-weight: 700;
+  border-bottom: 2px solid var(--ink);
+}
+
+/* ---------- Hero portrait (placeholder for now) ---------- */
+
+.hero-row {
+  display: flex;
+  /* flex-start, not center: the photo is taller than the two-line bio,
+     so centering pushed "Welcome" ~70px down from the row's actual top
+     to sit level with the photo's middle — most of the "gap below the
+     nav bar" was this, not real padding. */
+  align-items: flex-start;
+  gap: 2.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-text > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Mat/frame effect: a grey line with clearance around it, like a
+   photo print's white border, rather than a border sitting flush
+   against the image edge. */
+.hero-portrait-frame {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  padding: 18px;
+  flex-shrink: 0;
+}
+
+.hero-portrait-frame > p {
+  margin: 0;
+  line-height: 0;
+}
+
+.hero-portrait {
+  /* Rectangular (4:5). */
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .hero-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-portrait {
+    width: 160px;
+    height: 200px;
+  }
+}
+
+/* ---------- Section headings (H1s used as section markers) ---------- */
+
+main h1 {
+  font-family: "Libertinus Serif", serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  /* margin-bottom intentionally smaller than margin-top: a heading
+     should sit closer to the content it introduces than to whatever
+     came before it. Measured the old 1.75rem/1.75rem split as actually
+     backwards — the gap into the heading's own first paper (46.75px)
+     was larger than the gap leading into the NEXT heading (29.75px). */
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1.5px solid var(--ink);
+}
+
+main h1::after {
+  content: "";
+  display: inline-block;
+  width: 1ch;
+}
+
+/* On non-index pages where H1 is the page title, treat the FIRST H1 as the hero. */
+main > h1:first-of-type {
+  font-size: clamp(2rem, 5.5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  border-bottom: 4px double var(--ink);
+  padding-bottom: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- Body type ---------- */
+
+p {
+  /* The bundled Litera theme has its own `p { font-family: Georgia... }`
+     rule. Inheriting from body/html doesn't override a direct match on
+     the element itself, so this has to be set explicitly here too. */
+  font-family: inherit;
+  font-size: 1.05rem;
+  margin-bottom: 1.1rem;
+}
+
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+/* ---------- Lists ---------- */
+
+main ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 2rem 0;
+}
+
+main ul > li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+main ul > li:last-child {
+  border-bottom: none;
+}
+
+/* ---------- News list (dense, dated) ---------- */
+
+#news ~ ul:first-of-type > li {
+  padding: 0.55rem 0;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  border-bottom: 1px dotted var(--hairline);
+}
+
+#news ~ ul:first-of-type > li > strong:first-child {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-right: 0.5rem;
+}
+
+/* ---------- Paper card (working papers, works in progress) ---------- */
+
+.paper {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.paper:last-child,
+section.level1 > .paper:last-of-type {
+  border-bottom: none;
+}
+
+.paper > p:first-child {
+  margin-bottom: 0.6rem;
+}
+
+/* Hide raw blockquotes inside .papers until the script wraps them in <details>. */
+.papers blockquote { display: none; }
+
+/* Hide the "links" paragraph (the <p> right before a blockquote) until the
+   script moves it into the abstract summary. */
+.papers > p:has(+ blockquote) { display: none; }
+
+/* ---------- Date labels in the left margin ---------- */
+
+main ul > li:has(.date) {
+  position: relative;
+  padding-left: 5.75rem;
+}
+
+.date {
+  position: absolute;
+  left: 0;
+  top: 1.05rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ---------- Links ---------- */
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: background-color 80ms ease, color 80ms ease;
+}
+
+a:hover {
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+}
+
+/* Don't invert nav links on hover */
+.navbar a:hover {
+  background: transparent;
+  color: var(--ink);
+}
+
+/* ---------- Details / abstracts ---------- */
+
+details {
+  margin: 0.6rem 0 0.2rem;
+}
+
+details > summary {
+  cursor: pointer;
+  font-size: 0.74rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  list-style: none;
+  display: inline-block;
+}
+
+/* The links line (links + plain text like "Submitted") isn't the
+   toggle, so it shouldn't look clickable. cursor:auto here still shows
+   pointer over the actual <a> links (browsers resolve 'auto' to
+   pointer for an anchor regardless of an ancestor's cursor), just not
+   over the plain text around them. */
+details > summary > span {
+  cursor: auto;
+}
+
+details > summary::-webkit-details-marker { display: none; }
+
+details > summary::before {
+  /* ▸ and ▾ render at slightly different widths in the fallback font
+     covering these glyphs — confirmed directly: 8.58px vs 9.88px.
+     Without a fixed width, everything after the marker shifts right by
+     that exact difference when it toggles open. A fixed width makes
+     both states occupy identical space regardless of actual glyph
+     metrics. */
+  content: "▸";
+  display: inline-block;
+  width: 0.7rem;
+  text-align: center;
+  font-size: 0.7rem;
+  margin-right: 0.25rem;
+}
+
+details[open] > summary::before {
+  content: "▾";
+}
+
+details > *:not(summary) {
+  margin-left: 0;
+  margin-top: 1rem;
+  font-size: 0.98rem;
+  color: #1a1a1a;
+  line-height: 1.65;
+  border-left: 2px solid var(--ink);
+  padding: 0.25rem 0 0.25rem 1.1rem;
+  overflow-wrap: break-word;
+  /* Justified, not just left-aligned, so the right edge lines up too —
+     hyphens:auto avoids the large word-gaps justify can otherwise
+     create at this column width. */
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ---------- HR ---------- */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--ink);
+  margin: 2.5rem 0;
+}
+
+/* ---------- Misc ---------- */
+
+.anchorjs-link { display: none; }
+
+/* Page footer */
+.nav-footer,
+footer.footer {
+  border-top: 1px solid var(--hairline);
+  padding: 1rem 1.5rem !important;
+  margin-top: 5rem;
+  font-size: 0.62rem;
+  color: var(--muted);
+  background: var(--paper) !important;
+  font-family: "Libertinus Serif", serif !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.nav-footer a,
+footer.footer a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-footer a:hover,
+footer.footer a:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* Code styling for occasional inline code */
+code {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.92em;
+  background: #ececea;
+  padding: 0.05em 0.35em;
+  border-radius: 2px;
+}
+
+/* Selection */
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}

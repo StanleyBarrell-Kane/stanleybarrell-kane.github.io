@@ -1,19 +1,148 @@
 project:
   type: website
-  output-dir: .
+  output-dir: docs
+  pre-render: ./scripts/dates.sh
+  render:
+    - "*.qmd"
+    - "!cv.qmd"
+    - "!teaching.qmd"
+  resources:
+    - assets/
+    - CNAME
 
 website:
   title: "Stanley Barrell-Kane"
+  site-url: "https://stanleybarrell-kane.github.io"
+  description: "Ph.D. Candidate in Economics at the University of Bristol. Research in macroeconomics, environmental economics, and spatial economics."
+  favicon: assets/favicon.svg
+  open-graph: true
+  twitter-card: true
+  page-footer:
+    border: false
+    right: "Last updated {{< var updated >}}"
   navbar:
+    pinned: true
+    collapse-below: lg
     left:
       - text: "Home"
         href: index.qmd
+      - text: "Research"
+        href: research.qmd
       - text: "CV"
-        href: cv.qmd
+        href: cv/cv.pdf
+        target: _blank
+    right:
+      - icon: envelope
+        href: mailto:stanley.barrell-kane@bristol.ac.uk
+      - icon: github
+        href: https://github.com/StanleyBarrell-Kane
+    search: false
 format:
   html:
-    theme: cosmo
-    toc: true
+    theme:
+      light: litera
+    toc: false
+    css: styles.css
+    smooth-scroll: true
+    page-layout: article
+    anchor-sections: false
+    include-in-header:
+      text: |
+        <link rel="apple-touch-icon" href="assets/favicon-180.png">
+    include-after-body:
+      text: |
+        <script>
+        (function() {
+          // External links open in a new tab.
+          const host = location.hostname;
+          document.querySelectorAll('main a[href]').forEach(a => {
+            try {
+              const u = new URL(a.href, location.origin);
+              if (u.hostname && u.hostname !== host) {
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+              }
+            } catch (e) {}
+          });
+
+          // Hyphens in the page hero -> non-breaking, so names don't split.
+          const hero = document.querySelector('main h2:first-of-type, main h1.title');
+          if (hero) hero.innerHTML = hero.innerHTML.replace(/-/g, '‑');
+
+          // Inside .papers containers: each bold-titled <p> starts a new paper card,
+          // and any blockquote within a card becomes a collapsible Abstract.
+          const isTitle = el =>
+            el.tagName === 'P' &&
+            el.firstElementChild &&
+            el.firstChild === el.firstElementChild &&
+            el.firstElementChild.tagName === 'STRONG';
+
+          const toDetails = (bq, label, linksNode) => {
+            const det = document.createElement('details');
+            const sum = document.createElement('summary');
+            sum.appendChild(document.createTextNode(label));
+            if (linksNode && linksNode.childNodes.length) {
+              sum.appendChild(document.createTextNode(' · '));
+              // Wrap the links line in its own span so clicks anywhere in it
+              // (links, separators, plain text like "Submitted") never
+              // toggle the details — only clicking the "Abstract" label does.
+              // Note: the native <details> toggle is the browser's default
+              // action for the click, not a normal bubbling listener —
+              // stopPropagation() alone does NOT cancel it, only
+              // preventDefault() does. Skip that for actual links so they
+              // still navigate normally.
+              const linksSpan = document.createElement('span');
+              while (linksNode.firstChild) linksSpan.appendChild(linksNode.firstChild);
+              linksSpan.addEventListener('click', e => {
+                e.stopPropagation();
+                if (!e.target.closest('a')) e.preventDefault();
+              });
+              sum.appendChild(linksSpan);
+            }
+            det.appendChild(sum);
+            while (bq.firstChild) det.appendChild(bq.firstChild);
+            return det;
+          };
+
+          document.querySelectorAll('.papers').forEach(container => {
+            const kids = Array.from(container.children);
+            const cards = [];
+            let card = null;
+            for (const k of kids) {
+              if (isTitle(k)) {
+                card = { title: k, body: [] };
+                cards.push(card);
+              } else if (card) {
+                card.body.push(k);
+              }
+            }
+            if (!cards.length) return;
+            cards.forEach(c => { c.title.remove(); c.body.forEach(n => n.remove()); });
+            cards.forEach(c => {
+              const div = document.createElement('div');
+              div.className = 'paper';
+              div.appendChild(c.title);
+              // The <p> immediately before a <blockquote> is treated as the "links" line.
+              let linksNode = null;
+              for (let i = 0; i < c.body.length - 1; i++) {
+                if (c.body[i].tagName === 'P' && c.body[i + 1].tagName === 'BLOCKQUOTE') {
+                  linksNode = c.body[i];
+                  break;
+                }
+              }
+              c.body.forEach(n => {
+                if (n === linksNode) return;
+                if (n.tagName === 'BLOCKQUOTE') {
+                  div.appendChild(toDetails(n, 'Abstract', linksNode));
+                } else {
+                  div.appendChild(n);
+                }
+              });
+              container.appendChild(div);
+            });
+          });
+        })();
+        </script>
 
 
 

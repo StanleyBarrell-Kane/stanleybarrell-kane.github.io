@@ -3,5 +3,18 @@ title: "CV"
 format: html
 ---
 
-# Curriculum Vitae
-[Link here](cv/cv.pdf){target="_blank"}
+[Download PDF](cv/cv.pdf) — last updated **{{< var cv_updated >}}**.
+
+# Education
+
+- **Ph.D. in Economics**, University of Bristol — expected 2027
+- **M.Res. in Economics**, University of Bristol — 2023
+- **B.Sc. in Economics and Econometrics**, University of Bristol — 2022
+
+# Experience
+
+- **Research Assistant** to Dr. Hailey Yoon, *Text Analysis of Trade Agreements* — 2023
+
+# Awards & Funding
+
+- University of Bristol Postgraduate Bursary — 2022–2027
