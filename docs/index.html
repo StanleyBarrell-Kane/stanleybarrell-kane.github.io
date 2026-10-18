@@ -67,16 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Stanley Barrell-Kane",
+  "url": "https://stanleybarrell-kane.com",
+  "image": "https://stanleybarrell-kane.com/assets/headshot.jpg",
+  "jobTitle": "Ph.D. Candidate in Economics",
+  "email": "stanley.barrell-kane@bristol.ac.uk",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Bristol"
+  },
+  "sameAs": [
+    "https://github.com/StanleyBarrell-Kane",
+    "https://research-information.bris.ac.uk/en/persons/stanley-barrell-kane/",
+    "https://www.linkedin.com/in/stanley-barrell-kane"
+  ]
+}
+</script>
 
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Stanley Barrell-Kane">
-<meta property="og:image" content="https://stanleybarrell-kane.github.io/assets/headshot.jpg">
+<meta property="og:image" content="https://stanleybarrell-kane.com/assets/headshot.jpg">
 <meta property="og:site_name" content="Stanley Barrell-Kane">
 <meta property="og:image:alt" content="Portrait of Stanley Barrell-Kane">
 <meta name="twitter:title" content="Stanley Barrell-Kane">
-<meta name="twitter:image" content="https://stanleybarrell-kane.github.io/assets/headshot.jpg">
+<meta name="twitter:image" content="https://stanleybarrell-kane.com/assets/headshot.jpg">
 <meta name="twitter:image:alt" content="Portrait of Stanley Barrell-Kane">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -217,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/stanleybarrell-kane\.github\.io");
+        var filterRegex = new RegExp("https:\/\/stanleybarrell-kane\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

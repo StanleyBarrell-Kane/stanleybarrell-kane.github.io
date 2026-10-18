@@ -427,6 +427,12 @@ a {
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
   transition: background-color 80ms ease, color 80ms ease;
+  /* The bundled theme has its own bare `a { font-weight: 400 }` rule,
+     which silently overrides inherited bold from any <strong> wrapper
+     — a bold linked paper title was actually rendering at normal
+     weight because of it. Inherit instead, so a link's weight always
+     matches whatever's around it. */
+  font-weight: inherit;
 }
 
 a:hover {
@@ -447,13 +453,18 @@ details {
   margin: 0.6rem 0 0.2rem;
 }
 
+/* Deliberately NOT uppercase/letter-spaced like the nav and section
+   headings — with three separate all-caps registers stacked this
+   close together (nav, section heading, this row) the page read as
+   busy. Dropping this one out to a quiet italic caption gives the
+   page two clear registers (structural caps vs. quiet detail) instead
+   of three competing ones. */
 details > summary {
   cursor: pointer;
-  font-size: 0.74rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  font-weight: 400;
   color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-weight: 600;
   list-style: none;
   display: inline-block;
 }
