@@ -447,13 +447,18 @@ details {
   margin: 0.6rem 0 0.2rem;
 }
 
+/* Deliberately NOT uppercase/letter-spaced like the nav and section
+   headings — with three separate all-caps registers stacked this
+   close together (nav, section heading, this row) the page read as
+   busy. Dropping this one out to a quiet italic caption gives the
+   page two clear registers (structural caps vs. quiet detail) instead
+   of three competing ones. */
 details > summary {
   cursor: pointer;
-  font-size: 0.74rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  font-weight: 400;
   color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-weight: 600;
   list-style: none;
   display: inline-block;
 }
