@@ -497,11 +497,10 @@ details > *:not(summary) {
   border-left: 2px solid var(--ink);
   padding: 0.25rem 0 0.25rem 1.1rem;
   overflow-wrap: break-word;
-  /* Justified, not just left-aligned, so the right edge lines up too —
-     hyphens:auto avoids the large word-gaps justify can otherwise
-     create at this column width. */
+  /* Justified, not just left-aligned, so the right edge lines up too.
+     hyphens:auto was producing too many hyphenated line-end run-ons
+     at this column width to read well — justify alone. */
   text-align: justify;
-  hyphens: auto;
 }
 
 /* ---------- HR ---------- */
