@@ -392,14 +392,6 @@ section.level1 > .paper:last-of-type {
   margin-bottom: 0.6rem;
 }
 
-/* Titles stay <strong> either way (the script needs that tag to find
-   each paper's title), but a title with no actual link behind it —
-   a work in progress, nothing to click yet — reads as plain weight
-   instead of full bold, so only real, linked papers look bold. */
-.paper > p:first-child > strong:not(:has(a)) {
-  font-weight: 400;
-}
-
 /* Hide raw blockquotes inside .papers until the script wraps them in <details>. */
 .papers blockquote { display: none; }
 
@@ -435,6 +427,12 @@ a {
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
   transition: background-color 80ms ease, color 80ms ease;
+  /* The bundled theme has its own bare `a { font-weight: 400 }` rule,
+     which silently overrides inherited bold from any <strong> wrapper
+     — a bold linked paper title was actually rendering at normal
+     weight because of it. Inherit instead, so a link's weight always
+     matches whatever's around it. */
+  font-weight: inherit;
 }
 
 a:hover {
