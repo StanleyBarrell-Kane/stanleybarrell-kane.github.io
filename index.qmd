@@ -9,6 +9,6 @@ format: html
 I am a Ph.D. Candidate in Economics at the University of Bristol. I work on **macroeconomics**, **environmental economics**, and **spatial economics**.
 :::
 ::: {.hero-portrait-frame}
-<img src="assets/placeholder-portrait.jpg" alt="Portrait of Stanley Barrell-Kane" class="hero-portrait">
+<img src="assets/headshot.jpg" alt="Portrait of Stanley Barrell-Kane" class="hero-portrait">
 :::
 :::
