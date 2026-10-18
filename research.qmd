@@ -32,6 +32,4 @@ format: html
 
 **Skills That Stay: Mobility and Human Capital Investment Across the Skill Distribution**
 
-*In progress*
-
 :::

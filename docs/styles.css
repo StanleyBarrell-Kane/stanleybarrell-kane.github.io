@@ -392,14 +392,12 @@ section.level1 > .paper:last-of-type {
   margin-bottom: 0.6rem;
 }
 
-/* A status line under a paper title that has no abstract to pair with
-   (so the script never wraps it into details/summary) — same quiet
-   italic caption style as that summary row, for entries like a plain
-   "In progress" that aren't a details > summary. */
-.paper > p:not(:first-child) {
-  font-size: 0.85rem;
-  font-style: italic;
-  color: var(--muted);
+/* Titles stay <strong> either way (the script needs that tag to find
+   each paper's title), but a title with no actual link behind it —
+   a work in progress, nothing to click yet — reads as plain weight
+   instead of full bold, so only real, linked papers look bold. */
+.paper > p:first-child > strong:not(:has(a)) {
+  font-weight: 400;
 }
 
 /* Hide raw blockquotes inside .papers until the script wraps them in <details>. */
