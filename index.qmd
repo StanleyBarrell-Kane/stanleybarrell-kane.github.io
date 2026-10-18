@@ -16,7 +16,9 @@ include-in-header:
         "name": "University of Bristol"
       },
       "sameAs": [
-        "https://github.com/StanleyBarrell-Kane"
+        "https://github.com/StanleyBarrell-Kane",
+        "https://research-information.bris.ac.uk/en/persons/stanley-barrell-kane/",
+        "https://www.linkedin.com/in/stanley-barrell-kane"
       ]
     }
     </script>
