@@ -392,6 +392,16 @@ section.level1 > .paper:last-of-type {
   margin-bottom: 0.6rem;
 }
 
+/* A status line under a paper title that has no abstract to pair with
+   (so the script never wraps it into details/summary) — same quiet
+   italic caption style as that summary row, for entries like a plain
+   "In progress" that aren't a details > summary. */
+.paper > p:not(:first-child) {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
 /* Hide raw blockquotes inside .papers until the script wraps them in <details>. */
 .papers blockquote { display: none; }
 
