@@ -13,6 +13,7 @@ website:
   title: "Stanley Barrell-Kane"
   site-url: "https://stanleybarrell-kane.github.io"
   description: "Ph.D. Candidate in Economics at the University of Bristol. Research in macroeconomics, environmental economics, and spatial economics."
+  favicon: assets/favicon.svg
   open-graph: true
   twitter-card: true
   page-footer:
@@ -44,6 +45,9 @@ format:
     smooth-scroll: true
     page-layout: article
     anchor-sections: false
+    include-in-header:
+      text: |
+        <link rel="apple-touch-icon" href="assets/favicon-180.png">
     include-after-body:
       text: |
         <script>
