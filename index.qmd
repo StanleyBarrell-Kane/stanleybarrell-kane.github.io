@@ -1,5 +1,25 @@
 ---
 format: html
+include-in-header:
+  text: |
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Stanley Barrell-Kane",
+      "url": "https://stanleybarrell-kane.com",
+      "image": "https://stanleybarrell-kane.com/assets/headshot.jpg",
+      "jobTitle": "Ph.D. Candidate in Economics",
+      "email": "stanley.barrell-kane@bristol.ac.uk",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Bristol"
+      },
+      "sameAs": [
+        "https://github.com/StanleyBarrell-Kane"
+      ]
+    }
+    </script>
 ---
 
 ::: {.hero-row}
