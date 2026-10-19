@@ -99,6 +99,29 @@ body.nav-fixed {
   align-items: flex-start !important;
 }
 
+/* Below 992px (Bootstrap's lg breakpoint, where the toggler button
+   appears) Bootstrap's own order values already put the toggler first
+   and the name second — they were just stacking vertically because
+   the container above is flex-direction:column at every width. Wrap
+   instead, so this first row sits side by side, and force the
+   collapse menu onto its own line after it. */
+@media (max-width: 991.98px) {
+  .navbar-container {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    align-items: center !important;
+  }
+
+  .navbar-brand-container {
+    margin: 0 !important;
+    margin-left: 0.85rem !important;
+  }
+
+  .navbar-collapse {
+    flex-basis: 100%;
+  }
+}
+
 .navbar-brand-container {
   margin: 0 0 1.1rem !important;
   /* Bootstrap reserves 115px here for a toggler button that, in this
@@ -278,6 +301,13 @@ main h2:first-of-type + p strong {
   .hero-row {
     flex-direction: column;
     text-align: center;
+  }
+
+  /* text-align:center above only centers inline text runs — it doesn't
+     move a block-level child like this frame, which was still sitting
+     flush left. align-self centers the frame itself within the column. */
+  .hero-portrait-frame {
+    align-self: center;
   }
 
   .hero-portrait {
@@ -462,7 +492,6 @@ details {
 details > summary {
   cursor: pointer;
   font-size: 0.85rem;
-  font-style: italic;
   font-weight: 400;
   color: var(--muted);
   list-style: none;
