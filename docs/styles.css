@@ -99,12 +99,27 @@ body.nav-fixed {
   align-items: flex-start !important;
 }
 
+.navbar-brand-container {
+  margin: 0 0 1.1rem !important;
+  /* Bootstrap reserves 115px here for a toggler button that, in this
+     stacked layout, no longer shares the row — found truncating the
+     name on mobile (it was eating into real text width for nothing). */
+  max-width: none !important;
+}
+
 /* Below 992px (Bootstrap's lg breakpoint, where the toggler button
    appears) Bootstrap's own order values already put the toggler first
    and the name second — they were just stacking vertically because
    the container above is flex-direction:column at every width. Wrap
    instead, so this first row sits side by side, and force the
-   collapse menu onto its own line after it. */
+   collapse menu onto its own line after it.
+
+   This block must come AFTER the plain .navbar-brand-container rule
+   above — both set margin with !important at equal specificity, and
+   whichever is later in the file wins when both apply. Had this
+   backwards before: the desktop margin-bottom (1.1rem) was silently
+   winning on mobile too, pushing the name down out of vertical
+   alignment with the toggler. */
 @media (max-width: 991.98px) {
   .navbar-container {
     flex-direction: row !important;
@@ -120,14 +135,6 @@ body.nav-fixed {
   .navbar-collapse {
     flex-basis: 100%;
   }
-}
-
-.navbar-brand-container {
-  margin: 0 0 1.1rem !important;
-  /* Bootstrap reserves 115px here for a toggler button that, in this
-     stacked layout, no longer shares the row — found truncating the
-     name on mobile (it was eating into real text width for nothing). */
-  max-width: none !important;
 }
 
 .navbar-brand {
