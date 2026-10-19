@@ -413,6 +413,22 @@ main ul > li:last-child {
   line-height: 1.55;
 }
 
+/* Coauthor byline, under the title. Deliberately a fenced div (not a
+   bare <p>) — the page's script merges a bare paragraph sitting right
+   before a blockquote into the Abstract toggle's summary row, and this
+   needs to stay a separate, visible line instead. */
+.coauthor {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-top: -0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.coauthor p {
+  margin-bottom: 0;
+}
+
 .paper:last-child,
 section.level1 > .paper:last-of-type {
   border-bottom: none;
