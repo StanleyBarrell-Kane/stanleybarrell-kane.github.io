@@ -6,7 +6,7 @@ format: html
 # Working Papers
 
 :::{.papers}
-**[The Distributional Consequences of Net-Zero Transitions](papers/net-zero%20transition_manuscript.pdf){target="_blank" rel="noopener noreferrer"}** · *Submitted*
+**[The Distributional Consequences of Net-Zero Transitions](papers/net-zero%20transition_manuscript.pdf){target="_blank" rel="noopener noreferrer"}** · Submitted
 
 ::: {.coauthor}
 with [Hakkı Yazıcı](https://hakkiyazici.net/)
