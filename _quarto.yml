@@ -2,6 +2,7 @@ project:
   type: website
   output-dir: docs
   pre-render: ./scripts/dates.sh
+  post-render: ./scripts/fix-sitemap.sh
   render:
     - "*.qmd"
     - "!cv.qmd"
@@ -46,6 +47,7 @@ format:
     smooth-scroll: true
     page-layout: article
     anchor-sections: false
+    canonical-url: true
     include-in-header:
       text: |
         <link rel="apple-touch-icon" href="assets/favicon-180.png">
