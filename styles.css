@@ -10,6 +10,7 @@
   --paper: #fafaf7;
   --muted: #6a6a6a;
   --hairline: #d8d6d0;
+  --rule: #4a4a4a;
 }
 
 /* ---------- Base ---------- */
@@ -71,7 +72,7 @@ body.nav-fixed {
 
 .navbar {
   background: var(--paper) !important;
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
   /* No horizontal padding here — .navbar-container below is built exactly
      like main.content (centered box + its own 1.5rem padding), so there's
      only one source of left/right inset, matching the body column exactly. */
@@ -222,7 +223,7 @@ main h1.title {
   text-transform: uppercase;
   margin: 1.5rem 0 1.25rem;
   padding-bottom: 1.1rem;
-  border-bottom: 4px double var(--ink);
+  border-bottom: 4px double var(--rule);
   text-wrap: pretty;
   hyphens: none;
 }
@@ -337,7 +338,7 @@ main h1 {
   margin-top: 1.75rem;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1.5px solid var(--ink);
+  border-bottom: 1.5px solid var(--rule);
 }
 
 main h1::after {
@@ -352,7 +353,7 @@ main > h1:first-of-type {
   font-weight: 700;
   letter-spacing: -0.025em;
   text-transform: uppercase;
-  border-bottom: 4px double var(--ink);
+  border-bottom: 4px double var(--rule);
   padding-bottom: 0.9rem;
   margin-top: 1rem;
   margin-bottom: 2.5rem;
@@ -568,7 +569,7 @@ details > *:not(summary) {
 
 hr {
   border: none;
-  border-top: 1px solid var(--ink);
+  border-top: 1px solid var(--rule);
   margin: 2.5rem 0;
 }
 
