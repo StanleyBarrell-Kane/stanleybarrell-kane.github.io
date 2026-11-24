@@ -7,7 +7,7 @@ format: html
 
 # Education
 
-- **Ph.D. in Economics**, University of Bristol — expected 2027
+- **Ph.D. in Economics**, University of Bristol — expected 2028
 - **M.Res. in Economics**, University of Bristol — 2023
 - **B.Sc. in Economics and Econometrics**, University of Bristol — 2022
 
